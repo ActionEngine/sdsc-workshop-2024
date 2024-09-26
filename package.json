@@ -1,0 +1,26 @@
+{
+  "name": "mask-extension-filter",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.4.1"
+  },
+  "dependencies": {
+    "@deck.gl/core": "^9.0.29",
+    "@deck.gl/extensions": "^9.0.29",
+    "@deck.gl/layers": "^9.0.29",
+    "@deck.gl/mapbox": "^9.0.29",
+    "@loaders.gl/core": "^4.2.4",
+    "@loaders.gl/csv": "^4.2.4",
+    "@luma.gl/core": "~9.0.0",
+    "@luma.gl/engine": "~9.0.0",
+    "d3-dsv": "^3.0.1",
+    "maplibre-gl": "^4.7.0"
+  }
+}
