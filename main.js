@@ -1,5 +1,6 @@
 import { MapboxOverlay as DeckOverlay } from "@deck.gl/mapbox";
 import maplibregl from "maplibre-gl";
+// Here we will import new layers
 import { GeoJsonLayer } from "@deck.gl/layers";
 import { load } from "@loaders.gl/core";
 import { CSVLoader } from "@loaders.gl/csv";
@@ -10,6 +11,9 @@ import "./style.css";
 // Polygon data
 const ZIP_CODES_DATA =
   "https://raw.githubusercontent.com/ActionEngine/data-samples/refs/heads/main/csv/cdb_zcta5_fdb278bc.csv";
+const POINT_DATA =
+  "https://raw.githubusercontent.com/ActionEngine/data-samples/refs/heads/main/csv/osm_nodes_74461e34_000000000048.csv";
+
 
 // Create a basemap
 const map = new maplibregl.Map({
@@ -30,7 +34,7 @@ let selectedZipCodes = new Set();
 // Selection frame is to update polygons when selection has changed
 let zipCodesSelectionFrame = 0;
 
-// Layer creator. We wrap it in a function to create a new instance when deck.gl re-render
+// Polygons layer creator. We wrap it in a function to create a new instance when deck.gl re-render
 const getZipCodesLayer = () =>
   new GeoJsonLayer({
     id: "zip_codes",
@@ -49,6 +53,16 @@ const getZipCodesLayer = () =>
     },
   });
 
+// Mask layer creator code is going to be here:
+
+
+
+
+// Scatterplot layer creator code is going to be here:
+
+
+
+
 // Create deck.gl engine
 const deckOverlay = new DeckOverlay({
   layers: [],
@@ -65,9 +79,9 @@ const deckOverlay = new DeckOverlay({
 
       // Incremet selection frame to cause the color update
       zipCodesSelectionFrame++;
-      // Update the layer
+      // Update layers
       deckOverlay.setProps({
-        layers: [getZipCodesLayer()],
+        layers: [getZipCodesLayer()],  //here we will add new layers after we create them
       });
     }
   },
@@ -89,7 +103,7 @@ load(ZIP_CODES_DATA, CSVLoader).then((result) => {
   }));
   // Update the layer
   deckOverlay.setProps({
-    layers: [getZipCodesLayer()],
+    layers: [getZipCodesLayer()],   //here we will add new layers after we create them
   });
 });
 
