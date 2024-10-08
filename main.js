@@ -58,7 +58,7 @@ const getZipCodesLayer = () =>
 
 
 
-// Scatterplot layer creator code is going to be here:
+// Scatterplot and custom layer creator code is going to be here:
 
 
 
