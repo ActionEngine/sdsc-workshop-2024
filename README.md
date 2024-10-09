@@ -4,7 +4,7 @@ A GeoJSON layer on top of a CARTO basemap. The layer visualize 5-digit Zip Code 
 
 Uses [Vite](https://vitejs.dev/) to bundle and serve files.
 
-Please follow the link to our Slack channel: https://shorturl.at/2Wuw4
+Please follow the link to our [Slack channel](https://shorturl.at/2Wuw4)
 
 ## Usage
 
